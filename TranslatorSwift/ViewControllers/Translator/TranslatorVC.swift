@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Firebase
+import MLKitTranslate
 
 public class TranslatorVC: UIViewController
 {
@@ -57,181 +57,217 @@ public class TranslatorVC: UIViewController
         )
         
         // Create an german-arabic translator:
-        let germanArabicOptions = TranslatorOptions(sourceLanguage: .de, targetLanguage: .ar)
-        germanArabicTranslator = NaturalLanguage.naturalLanguage().translator(options: germanArabicOptions)
+        let germanArabicOptions = TranslatorOptions(sourceLanguage: .german, targetLanguage: .arabic)
+        germanArabicTranslator = Translator.translator(options: germanArabicOptions)
         germanArabicTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an german-chinese translator:
-        let germanChineseOptions = TranslatorOptions(sourceLanguage: .de, targetLanguage: .zh)
-        germanChineseTranslator = NaturalLanguage.naturalLanguage().translator(options: germanChineseOptions)
+        let germanChineseOptions = TranslatorOptions(sourceLanguage: .german, targetLanguage: .chinese)
+        germanChineseTranslator = Translator.translator(options: germanChineseOptions)
         germanChineseTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an german-spanish translator:
-        let germanSpanishOptions = TranslatorOptions(sourceLanguage: .de, targetLanguage: .es)
-        germanSpanishTranslator = NaturalLanguage.naturalLanguage().translator(options: germanSpanishOptions)
+        let germanSpanishOptions = TranslatorOptions(sourceLanguage: .german, targetLanguage: .spanish)
+        germanSpanishTranslator = Translator.translator(options: germanSpanishOptions)
         germanSpanishTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an german-english translator:
-        let germanEnglishOptions = TranslatorOptions(sourceLanguage: .de, targetLanguage: .en)
-        germanEnglishTranslator = NaturalLanguage.naturalLanguage().translator(options: germanEnglishOptions)
+        let germanEnglishOptions = TranslatorOptions(sourceLanguage: .german, targetLanguage: .english)
+        germanEnglishTranslator = Translator.translator(options: germanEnglishOptions)
         germanEnglishTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an german-french translator:
-        let germanFrenchOptions = TranslatorOptions(sourceLanguage: .de, targetLanguage: .fr)
-        germanFrenchTranslator = NaturalLanguage.naturalLanguage().translator(options: germanFrenchOptions)
+        let germanFrenchOptions = TranslatorOptions(sourceLanguage: .german, targetLanguage: .french)
+        germanFrenchTranslator = Translator.translator(options: germanFrenchOptions)
         germanFrenchTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         
         // Create an arabic-german translator:
-        let arabicGermanOptions = TranslatorOptions(sourceLanguage: .ar, targetLanguage: .de)
-        arabicGermanTranslator = NaturalLanguage.naturalLanguage().translator(options: arabicGermanOptions)
+        let arabicGermanOptions = TranslatorOptions(sourceLanguage: .arabic, targetLanguage: .german)
+        arabicGermanTranslator = Translator.translator(options: arabicGermanOptions)
         arabicGermanTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an arabic-chinese translator:
-        let arabicChineseOptions = TranslatorOptions(sourceLanguage: .ar, targetLanguage: .zh)
-        arabicChineseTranslator = NaturalLanguage.naturalLanguage().translator(options: arabicChineseOptions)
+        let arabicChineseOptions = TranslatorOptions(sourceLanguage: .arabic, targetLanguage: .chinese)
+        arabicChineseTranslator = Translator.translator(options: arabicChineseOptions)
         arabicChineseTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an arabic-spanish translator:
-        let arabicSpanishOptions = TranslatorOptions(sourceLanguage: .ar, targetLanguage: .es)
-        arabicSpanishTranslator = NaturalLanguage.naturalLanguage().translator(options: arabicSpanishOptions)
+        let arabicSpanishOptions = TranslatorOptions(sourceLanguage: .arabic, targetLanguage: .spanish)
+        arabicSpanishTranslator = Translator.translator(options: arabicSpanishOptions)
         arabicSpanishTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an arabic-english translator:
-        let arabicEnglishOptions = TranslatorOptions(sourceLanguage: .ar, targetLanguage: .en)
-        arabicEnglishTranslator = NaturalLanguage.naturalLanguage().translator(options: arabicEnglishOptions)
+        let arabicEnglishOptions = TranslatorOptions(sourceLanguage: .arabic, targetLanguage: .english)
+        arabicEnglishTranslator = Translator.translator(options: arabicEnglishOptions)
         arabicEnglishTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an arabic-french translator:
-        let arabicFrenchOptions = TranslatorOptions(sourceLanguage: .ar, targetLanguage: .fr)
-        arabicFrenchTranslator = NaturalLanguage.naturalLanguage().translator(options: arabicFrenchOptions)
+        let arabicFrenchOptions = TranslatorOptions(sourceLanguage: .arabic, targetLanguage: .french)
+        arabicFrenchTranslator = Translator.translator(options: arabicFrenchOptions)
         arabicFrenchTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         
         // Create an chinese-german translator:
-        let chineseGermanOptions = TranslatorOptions(sourceLanguage: .zh, targetLanguage: .de)
-        chineseGermanTranslator = NaturalLanguage.naturalLanguage().translator(options: chineseGermanOptions)
+        let chineseGermanOptions = TranslatorOptions(sourceLanguage: .chinese, targetLanguage: .german)
+        chineseGermanTranslator = Translator.translator(options: chineseGermanOptions)
         chineseGermanTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an chinese-arabic translator:
-        let chineseArabicOptions = TranslatorOptions(sourceLanguage: .zh, targetLanguage: .ar)
-        chineseArabicTranslator = NaturalLanguage.naturalLanguage().translator(options: chineseArabicOptions)
+        let chineseArabicOptions = TranslatorOptions(sourceLanguage: .chinese, targetLanguage: .arabic)
+        chineseArabicTranslator = Translator.translator(options: chineseArabicOptions)
         chineseArabicTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an chinese-spanish translator:
-        let chineseSpanishOptions = TranslatorOptions(sourceLanguage: .zh, targetLanguage: .es)
-        chineseSpanishTranslator = NaturalLanguage.naturalLanguage().translator(options: chineseSpanishOptions)
+        let chineseSpanishOptions = TranslatorOptions(sourceLanguage: .chinese, targetLanguage: .spanish)
+        chineseSpanishTranslator = Translator.translator(options: chineseSpanishOptions)
         chineseSpanishTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an chinese-english translator:
-        let chineseEnglishOptions = TranslatorOptions(sourceLanguage: .zh, targetLanguage: .en)
-        chineseEnglishTranslator = NaturalLanguage.naturalLanguage().translator(options: chineseEnglishOptions)
+        let chineseEnglishOptions = TranslatorOptions(sourceLanguage: .chinese, targetLanguage: .english)
+        chineseEnglishTranslator = Translator.translator(options: chineseEnglishOptions)
         chineseEnglishTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an chinese-french translator:
-        let chineseFrenchOptions = TranslatorOptions(sourceLanguage: .zh, targetLanguage: .fr)
-        chineseFrenchTranslator = NaturalLanguage.naturalLanguage().translator(options: chineseFrenchOptions)
+        let chineseFrenchOptions = TranslatorOptions(sourceLanguage: .chinese, targetLanguage: .french)
+        chineseFrenchTranslator = Translator.translator(options: chineseFrenchOptions)
         chineseFrenchTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
 
         // Create an french-german translator:
-        let frenchGermanOptions = TranslatorOptions(sourceLanguage: .fr, targetLanguage: .de)
-        frenchGermanTranslator = NaturalLanguage.naturalLanguage().translator(options: frenchGermanOptions)
+        let frenchGermanOptions = TranslatorOptions(sourceLanguage: .french, targetLanguage: .german)
+        frenchGermanTranslator = Translator.translator(options: frenchGermanOptions)
         frenchGermanTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an french-arabic translator:
-        let frenchArabicOptions = TranslatorOptions(sourceLanguage: .fr, targetLanguage: .ar)
-        frenchArabicTranslator = NaturalLanguage.naturalLanguage().translator(options: frenchArabicOptions)
+        let frenchArabicOptions = TranslatorOptions(sourceLanguage: .french, targetLanguage: .arabic)
+        frenchArabicTranslator = Translator.translator(options: frenchArabicOptions)
         frenchArabicTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an french-spanish translator:
-        let frenchSpanishOptions = TranslatorOptions(sourceLanguage: .fr, targetLanguage: .es)
-        frenchSpanishTranslator = NaturalLanguage.naturalLanguage().translator(options: frenchSpanishOptions)
+        let frenchSpanishOptions = TranslatorOptions(sourceLanguage: .french, targetLanguage: .spanish)
+        frenchSpanishTranslator = Translator.translator(options: frenchSpanishOptions)
         frenchSpanishTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an french-english translator:
-        let frenchEnglishOptions = TranslatorOptions(sourceLanguage: .fr, targetLanguage: .en)
-        frenchEnglishTranslator = NaturalLanguage.naturalLanguage().translator(options: frenchEnglishOptions)
+        let frenchEnglishOptions = TranslatorOptions(sourceLanguage: .french, targetLanguage: .english)
+        frenchEnglishTranslator = Translator.translator(options: frenchEnglishOptions)
         frenchEnglishTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an french-chinese translator:
-        let frenchChineseOptions = TranslatorOptions(sourceLanguage: .fr, targetLanguage: .zh)
-        frenchChineseTranslator = NaturalLanguage.naturalLanguage().translator(options: frenchChineseOptions)
+        let frenchChineseOptions = TranslatorOptions(sourceLanguage: .french, targetLanguage: .chinese)
+        frenchChineseTranslator = Translator.translator(options: frenchChineseOptions)
         frenchChineseTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         
         // Create an english-german translator:
-        let englishGermanOptions = TranslatorOptions(sourceLanguage: .en, targetLanguage: .de)
-        englishGermanTranslator = NaturalLanguage.naturalLanguage().translator(options: englishGermanOptions)
+        let englishGermanOptions = TranslatorOptions(sourceLanguage: .english, targetLanguage: .german)
+        englishGermanTranslator = Translator.translator(options: englishGermanOptions)
         englishGermanTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an english-arabic translator:
-        let englishArabicOptions = TranslatorOptions(sourceLanguage: .en, targetLanguage: .ar)
-        englishArabicTranslator = NaturalLanguage.naturalLanguage().translator(options: englishArabicOptions)
+        let englishArabicOptions = TranslatorOptions(sourceLanguage: .english, targetLanguage: .arabic)
+        englishArabicTranslator = Translator.translator(options: englishArabicOptions)
         englishArabicTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an english-spanish translator:
-        let englishSpanishOptions = TranslatorOptions(sourceLanguage: .en, targetLanguage: .es)
-        englishSpanishTranslator = NaturalLanguage.naturalLanguage().translator(options: englishSpanishOptions)
+        let englishSpanishOptions = TranslatorOptions(sourceLanguage: .english, targetLanguage: .spanish)
+        englishSpanishTranslator = Translator.translator(options: englishSpanishOptions)
         englishSpanishTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
-        // Create an english-english translator:
-        let englishFrenchOptions = TranslatorOptions(sourceLanguage: .en, targetLanguage: .fr)
-        englishFrenchTranslator = NaturalLanguage.naturalLanguage().translator(options: englishFrenchOptions)
+        // Create an english-french translator:
+        let englishFrenchOptions = TranslatorOptions(sourceLanguage: .english, targetLanguage: .french)
+        englishFrenchTranslator = Translator.translator(options: englishFrenchOptions)
         englishFrenchTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
         // Create an english-chinese translator:
-        let englishChineseOptions = TranslatorOptions(sourceLanguage: .en, targetLanguage: .zh)
-        englishChineseTranslator = NaturalLanguage.naturalLanguage().translator(options: englishChineseOptions)
+        let englishChineseOptions = TranslatorOptions(sourceLanguage: .english, targetLanguage: .chinese)
+        englishChineseTranslator = Translator.translator(options: englishChineseOptions)
         englishChineseTranslator.downloadModelIfNeeded(with: conditions) { error in
+            guard error == nil else { return }
+            // Model downloaded successfully. Okay to start translating.
+        }
+        
+        // Create an spanish-german translator:
+        let spanishGermanOptions = TranslatorOptions(sourceLanguage: .spanish, targetLanguage: .german)
+        spanishGermanTranslator = Translator.translator(options: spanishGermanOptions)
+        spanishGermanTranslator.downloadModelIfNeeded(with: conditions) { error in
+            guard error == nil else { return }
+            // Model downloaded successfully. Okay to start translating.
+        }
+        // Create an spanish-arabic translator:
+        let spanishArabicOptions = TranslatorOptions(sourceLanguage: .spanish, targetLanguage: .arabic)
+        spanishArabicTranslator = Translator.translator(options: spanishArabicOptions)
+        spanishArabicTranslator.downloadModelIfNeeded(with: conditions) { error in
+            guard error == nil else { return }
+            // Model downloaded successfully. Okay to start translating.
+        }
+        // Create an spanish-english translator:
+        let spanishEnglishOptions = TranslatorOptions(sourceLanguage: .spanish, targetLanguage: .english)
+        spanishEnglishTranslator = Translator.translator(options: spanishEnglishOptions)
+        spanishEnglishTranslator.downloadModelIfNeeded(with: conditions) { error in
+            guard error == nil else { return }
+            // Model downloaded successfully. Okay to start translating.
+        }
+        // Create an spanish-french translator:
+        let spanishFrenchOptions = TranslatorOptions(sourceLanguage: .spanish, targetLanguage: .french)
+        spanishFrenchTranslator = Translator.translator(options: spanishFrenchOptions)
+        spanishFrenchTranslator.downloadModelIfNeeded(with: conditions) { error in
+            guard error == nil else { return }
+            // Model downloaded successfully. Okay to start translating.
+        }
+        // Create an spanish-chinese translator:
+        let spanishChineseOptions = TranslatorOptions(sourceLanguage: .spanish, targetLanguage: .chinese)
+        spanishChineseTranslator = Translator.translator(options: spanishChineseOptions)
+        spanishChineseTranslator.downloadModelIfNeeded(with: conditions) { error in
             guard error == nil else { return }
             // Model downloaded successfully. Okay to start translating.
         }
