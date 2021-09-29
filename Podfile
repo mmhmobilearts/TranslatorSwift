@@ -6,4 +6,5 @@ target 'TranslatorSwift' do
   use_frameworks!
 
   # Pods for TranslatorSwift
+    pod 'GoogleMLKit/Translate'
 end
