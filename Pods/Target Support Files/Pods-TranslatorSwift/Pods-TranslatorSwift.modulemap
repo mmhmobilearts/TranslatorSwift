@@ -1,0 +1,6 @@
+framework module Pods_TranslatorSwift {
+  umbrella header "Pods-TranslatorSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
