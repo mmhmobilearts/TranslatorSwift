@@ -27,7 +27,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="goLanguage:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cpo-uZ-IGw"/>
+                                    <action selector="goLanguageWithButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="IiI-gm-n7t"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQa-jb-jxA">
@@ -41,7 +41,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="goLanguage:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NRD-jL-zfS"/>
+                                    <action selector="goLanguageWithButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="W6b-L9-vw0"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fDM-Ke-JSg">
