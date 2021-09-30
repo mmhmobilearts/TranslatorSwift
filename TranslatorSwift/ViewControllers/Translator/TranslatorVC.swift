@@ -23,12 +23,20 @@ public class TranslatorVC: UIViewController
         
     }
     
-    @IBAction func goLanguage(_: UIButton)
+    @IBAction func goLanguage(button: UIButton)
     {
         let bundle = Bundle(for: type(of:self))
         let s = UIStoryboard(name: "Language", bundle: bundle)
         let vwLanguage = s.instantiateViewController(withIdentifier: "Language") as! LanguageVC
         vwLanguage.delegate = self
+        if button == self.fromButton
+        {
+            vwLanguage.isDestination = false
+        }
+        else
+        {
+            vwLanguage.isDestination = true
+        }
         self.present(vwLanguage, animated: true, completion: nil)
     }
     
@@ -38,7 +46,8 @@ public class TranslatorVC: UIViewController
             "x-rapidapi-host": "google-translate20.p.rapidapi.com",
             "x-rapidapi-key": self.apiKey
         ]
-        let request = NSMutableURLRequest(url: NSURL(string: "https://google-translate20.p.rapidapi.com/translate?text=\(text)&tl=\(fromLang)&sl=\(toLang)")! as URL,
+        let escapedString = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+        let request = NSMutableURLRequest(url: NSURL(string: "https://google-translate20.p.rapidapi.com/translate?text=\(escapedString)&tl=\(toLang)&sl=\(fromLang)")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
                                             timeoutInterval: 10.0)
         request.httpMethod = "GET"
@@ -48,24 +57,36 @@ public class TranslatorVC: UIViewController
             if (error != nil)
             {
                 DispatchQueue.main.async {
+                    self.fromTextView.resignFirstResponder()
                     self.toTextView.text = text
                 }
             }
             else
             {
-                let httpResponse = response as? HTTPURLResponse
-                let responseData = httpResponse?.value(forKey: "data") as! [String : Any]
-                let code = responseData["code"] as! Int
-                if code == 200
+                let httpResponse = try! JSONSerialization.jsonObject(with: data!) as! [String : Any]
+                if let responseData = httpResponse["data"] as? [String : Any]
                 {
-                    let translation = responseData["translation"] as! String
-                    DispatchQueue.main.async {
-                        self.toTextView.text = translation
+                    let code = responseData["code"] as! Int
+                    if code == 200
+                    {
+                        let translation = responseData["translation"] as! String
+                        DispatchQueue.main.async {
+                            self.fromTextView.resignFirstResponder()
+                            self.toTextView.text = translation
+                        }
+                    }
+                    else
+                    {
+                        DispatchQueue.main.async {
+                            self.fromTextView.resignFirstResponder()
+                            self.toTextView.text = text
+                        }
                     }
                 }
                 else
                 {
                     DispatchQueue.main.async {
+                        self.fromTextView.resignFirstResponder()
                         self.toTextView.text = text
                     }
                 }
@@ -95,9 +116,13 @@ extension TranslatorVC: LanguageSelectorDelegate
 
 extension TranslatorVC: UITextViewDelegate
 {
-    public func textViewDidChange(_ textView: UITextView)
+    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool
     {
-        textView.resignFirstResponder()
-        self.translate(text: self.fromTextView.text)
+        if text == "\n"
+        {
+            self.translate(text: self.fromTextView.text)
+            return false
+        }
+        return true
     }
 }

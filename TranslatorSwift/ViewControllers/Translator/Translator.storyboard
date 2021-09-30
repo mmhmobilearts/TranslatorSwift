@@ -11,13 +11,13 @@
         <!--TranslatorVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="TranslatorVC" customModule="TranslatorSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Translator" id="Y6W-OH-hqX" customClass="TranslatorVC" customModule="TranslatorSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zui-oR-r8R">
-                                <rect key="frame" x="16" y="60" width="177" height="50"/>
+                                <rect key="frame" x="16" y="60" width="173.5" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="yh3-RE-fZx"/>
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQa-jb-jxA">
-                                <rect key="frame" x="201" y="60" width="197" height="50"/>
+                                <rect key="frame" x="205.5" y="60" width="192.5" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="oTR-72-Mkr"/>
@@ -45,20 +45,18 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fDM-Ke-JSg">
-                                <rect key="frame" x="16" y="126" width="382" height="356"/>
+                                <rect key="frame" x="16" y="142" width="382" height="328"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="go"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="continue"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="56C-tU-y2F"/>
                                 </connections>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KuO-20-LJb">
-                                <rect key="frame" x="16" y="490" width="382" height="356"/>
+                                <rect key="frame" x="16" y="502" width="382" height="328"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -71,11 +69,11 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fDM-Ke-JSg" secondAttribute="trailing" constant="16" id="4c2-i5-vLA"/>
                             <constraint firstItem="fDM-Ke-JSg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="9X7-pG-OeQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fQa-jb-jxA" secondAttribute="trailing" constant="16" id="Cln-xk-rBg"/>
-                            <constraint firstItem="fQa-jb-jxA" firstAttribute="leading" secondItem="Zui-oR-r8R" secondAttribute="trailing" constant="8" id="LMZ-nU-vKT"/>
+                            <constraint firstItem="fQa-jb-jxA" firstAttribute="leading" secondItem="Zui-oR-r8R" secondAttribute="trailing" constant="16" id="LMZ-nU-vKT"/>
                             <constraint firstItem="Zui-oR-r8R" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="NEs-lJ-C50"/>
-                            <constraint firstItem="fDM-Ke-JSg" firstAttribute="bottom" secondItem="KuO-20-LJb" secondAttribute="top" constant="-8" id="U0c-u8-GGJ"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="KuO-20-LJb" secondAttribute="bottom" constant="16" id="b1k-cM-qj2"/>
-                            <constraint firstItem="fDM-Ke-JSg" firstAttribute="top" secondItem="Zui-oR-r8R" secondAttribute="bottom" constant="16" id="d02-pB-rh7"/>
+                            <constraint firstItem="fDM-Ke-JSg" firstAttribute="bottom" secondItem="KuO-20-LJb" secondAttribute="top" constant="-32" id="U0c-u8-GGJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="KuO-20-LJb" secondAttribute="bottom" constant="32" id="b1k-cM-qj2"/>
+                            <constraint firstItem="fDM-Ke-JSg" firstAttribute="top" secondItem="Zui-oR-r8R" secondAttribute="bottom" constant="32" id="d02-pB-rh7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KuO-20-LJb" secondAttribute="trailing" constant="16" id="e93-vu-rMf"/>
                             <constraint firstItem="Zui-oR-r8R" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="eDf-C5-TiV"/>
                             <constraint firstItem="fQa-jb-jxA" firstAttribute="centerY" secondItem="Zui-oR-r8R" secondAttribute="centerY" id="k5B-BA-E0i"/>
